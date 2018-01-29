@@ -82,7 +82,7 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>ConfigBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interface1.cs" />
+    <Compile Include="InputLimit.cs" />
     <Compile Include="LossBox.cs">
       <SubType>Form</SubType>
     </Compile>

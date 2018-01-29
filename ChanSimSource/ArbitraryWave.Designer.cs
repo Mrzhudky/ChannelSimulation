@@ -30,153 +30,125 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArbitraryWave));
-            this.cboSignalType = new CCWin.SkinControl.SkinComboBox();
-            this.cboxShapingFilter = new CCWin.SkinControl.SkinComboBox();
-            this.txtSignFre = new System.Windows.Forms.TextBox();
-            this.txtSymbolRate = new System.Windows.Forms.TextBox();
-            this.txtPulseWidth = new System.Windows.Forms.TextBox();
-            this.txtDutyCycle = new System.Windows.Forms.TextBox();
-            this.txtModuDepth = new System.Windows.Forms.TextBox();
+            this.cboxSignalType = new CCWin.SkinControl.SkinComboBox();
+            this.cboxFilterType = new CCWin.SkinControl.SkinComboBox();
+            this.tboxSymbolRate = new System.Windows.Forms.TextBox();
+            this.tboxDutyCycle = new System.Windows.Forms.TextBox();
+            this.tboxFrequency = new System.Windows.Forms.TextBox();
             this.lalAeroUpdateUnit = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cboFreUnit = new CCWin.SkinControl.SkinComboBox();
-            this.cboxRateUnit = new CCWin.SkinControl.SkinComboBox();
-            this.cboModuType = new CCWin.SkinControl.SkinComboBox();
+            this.cboxDataSource = new CCWin.SkinControl.SkinComboBox();
+            this.cboxSymbolNum = new CCWin.SkinControl.SkinComboBox();
+            this.cboxModuType = new CCWin.SkinControl.SkinComboBox();
             this.errorShow = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnCancel = new CCWin.SkinControl.SkinButton();
             this.btnDetermine = new CCWin.SkinControl.SkinButton();
             this.bgwDmaTransfer = new System.ComponentModel.BackgroundWorker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cboxFreUnit = new CCWin.SkinControl.SkinComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorShow)).BeginInit();
             this.SuspendLayout();
             // 
-            // cboSignalType
+            // cboxSignalType
             // 
-            this.cboSignalType.ArrowColor = System.Drawing.Color.White;
-            this.cboSignalType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.cboSignalType.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.cboSignalType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.cboSignalType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboSignalType.DropBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.cboSignalType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSignalType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cboSignalType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.cboSignalType.ForeColor = System.Drawing.Color.White;
-            this.cboSignalType.FormattingEnabled = true;
-            this.cboSignalType.Items.AddRange(new object[] {
-            "正弦波",
-            "脉冲信号",
-            "方波",
-            "锯齿波",
-            "三角波",
+            this.cboxSignalType.ArrowColor = System.Drawing.Color.White;
+            this.cboxSignalType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxSignalType.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxSignalType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxSignalType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboxSignalType.DropBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxSignalType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxSignalType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboxSignalType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
+            this.cboxSignalType.ForeColor = System.Drawing.Color.White;
+            this.cboxSignalType.FormattingEnabled = true;
+            this.cboxSignalType.Items.AddRange(new object[] {
+            "单音",
+            "双音",
+            "脉冲",
             "PSK调制信号",
             "QAM调制信号",
-            "2ASK",
-            "自定义"});
-            this.cboSignalType.Location = new System.Drawing.Point(568, 125);
-            this.cboSignalType.Name = "cboSignalType";
-            this.cboSignalType.Size = new System.Drawing.Size(253, 25);
-            this.cboSignalType.TabIndex = 135;
-            this.cboSignalType.WaterColor = System.Drawing.Color.Transparent;
-            this.cboSignalType.WaterText = "";
-            this.cboSignalType.SelectedIndexChanged += new System.EventHandler(this.cboAeroPolar_SelectedIndexChanged);
+            "任意波"});
+            this.cboxSignalType.Location = new System.Drawing.Point(541, 125);
+            this.cboxSignalType.Name = "cboxSignalType";
+            this.cboxSignalType.Size = new System.Drawing.Size(253, 25);
+            this.cboxSignalType.TabIndex = 135;
+            this.cboxSignalType.WaterColor = System.Drawing.Color.Transparent;
+            this.cboxSignalType.WaterText = "";
+            this.cboxSignalType.SelectedIndexChanged += new System.EventHandler(this.cboxSignalType_SelectedIndexChanged);
             // 
-            // cboxShapingFilter
+            // cboxFilterType
             // 
-            this.cboxShapingFilter.ArrowColor = System.Drawing.Color.White;
-            this.cboxShapingFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.cboxShapingFilter.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.cboxShapingFilter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.cboxShapingFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboxShapingFilter.DropBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.cboxShapingFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxShapingFilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cboxShapingFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.cboxShapingFilter.ForeColor = System.Drawing.Color.White;
-            this.cboxShapingFilter.FormattingEnabled = true;
-            this.cboxShapingFilter.Items.AddRange(new object[] {
+            this.cboxFilterType.ArrowColor = System.Drawing.Color.White;
+            this.cboxFilterType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxFilterType.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxFilterType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxFilterType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboxFilterType.DropBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxFilterType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxFilterType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboxFilterType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxFilterType.ForeColor = System.Drawing.Color.White;
+            this.cboxFilterType.FormattingEnabled = true;
+            this.cboxFilterType.Items.AddRange(new object[] {
             "升余弦",
             "根升余弦"});
-            this.cboxShapingFilter.Location = new System.Drawing.Point(568, 417);
-            this.cboxShapingFilter.Name = "cboxShapingFilter";
-            this.cboxShapingFilter.Size = new System.Drawing.Size(253, 25);
-            this.cboxShapingFilter.TabIndex = 136;
-            this.cboxShapingFilter.WaterColor = System.Drawing.Color.Transparent;
-            this.cboxShapingFilter.WaterText = "";
+            this.cboxFilterType.Location = new System.Drawing.Point(541, 397);
+            this.cboxFilterType.Name = "cboxFilterType";
+            this.cboxFilterType.Size = new System.Drawing.Size(253, 24);
+            this.cboxFilterType.TabIndex = 136;
+            this.cboxFilterType.WaterColor = System.Drawing.Color.Transparent;
+            this.cboxFilterType.WaterText = "";
+            this.cboxFilterType.SelectedIndexChanged += new System.EventHandler(this.cboxFilterType_SelectedIndexChanged);
             // 
-            // txtSignFre
+            // tboxSymbolRate
             // 
-            this.txtSignFre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.txtSignFre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSignFre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.txtSignFre.ForeColor = System.Drawing.Color.White;
-            this.txtSignFre.Location = new System.Drawing.Point(568, 212);
-            this.txtSignFre.Name = "txtSignFre";
-            this.txtSignFre.Size = new System.Drawing.Size(211, 17);
-            this.txtSignFre.TabIndex = 137;
-            this.txtSignFre.Text = "0";
-            this.txtSignFre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtSignFre.TextChanged += new System.EventHandler(this.txtSignFre_TextChanged);
-            this.txtSignFre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInputUFloat_KeyPress);
+            this.tboxSymbolRate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.tboxSymbolRate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tboxSymbolRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxSymbolRate.ForeColor = System.Drawing.Color.White;
+            this.tboxSymbolRate.Location = new System.Drawing.Point(541, 359);
+            this.tboxSymbolRate.Name = "tboxSymbolRate";
+            this.tboxSymbolRate.Size = new System.Drawing.Size(211, 22);
+            this.tboxSymbolRate.TabIndex = 138;
+            this.tboxSymbolRate.Text = "0";
+            this.tboxSymbolRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tboxSymbolRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxIntegerNum_KeyPress);
             // 
-            // txtSymbolRate
+            // tboxDutyCycle
             // 
-            this.txtSymbolRate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.txtSymbolRate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSymbolRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.txtSymbolRate.ForeColor = System.Drawing.Color.White;
-            this.txtSymbolRate.Location = new System.Drawing.Point(568, 255);
-            this.txtSymbolRate.Name = "txtSymbolRate";
-            this.txtSymbolRate.Size = new System.Drawing.Size(211, 17);
-            this.txtSymbolRate.TabIndex = 138;
-            this.txtSymbolRate.Text = "0";
-            this.txtSymbolRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtSymbolRate.TextChanged += new System.EventHandler(this.txtSignFre_TextChanged);
-            this.txtSymbolRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInputUFloat_KeyPress);
+            this.tboxDutyCycle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.tboxDutyCycle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tboxDutyCycle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxDutyCycle.ForeColor = System.Drawing.Color.White;
+            this.tboxDutyCycle.Location = new System.Drawing.Point(541, 283);
+            this.tboxDutyCycle.Name = "tboxDutyCycle";
+            this.tboxDutyCycle.Size = new System.Drawing.Size(211, 22);
+            this.tboxDutyCycle.TabIndex = 139;
+            this.tboxDutyCycle.Text = "0";
+            this.tboxDutyCycle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tboxDutyCycle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxPositiveNum_KeyPress);
             // 
-            // txtPulseWidth
+            // tboxFrequency
             // 
-            this.txtPulseWidth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.txtPulseWidth.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPulseWidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.txtPulseWidth.ForeColor = System.Drawing.Color.White;
-            this.txtPulseWidth.Location = new System.Drawing.Point(568, 295);
-            this.txtPulseWidth.Name = "txtPulseWidth";
-            this.txtPulseWidth.Size = new System.Drawing.Size(211, 17);
-            this.txtPulseWidth.TabIndex = 139;
-            this.txtPulseWidth.Text = "0";
-            this.txtPulseWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPulseWidth.TextChanged += new System.EventHandler(this.txtSignFre_TextChanged);
-            this.txtPulseWidth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInputUInt_KeyPress);
-            // 
-            // txtDutyCycle
-            // 
-            this.txtDutyCycle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.txtDutyCycle.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDutyCycle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.txtDutyCycle.ForeColor = System.Drawing.Color.White;
-            this.txtDutyCycle.Location = new System.Drawing.Point(568, 338);
-            this.txtDutyCycle.Name = "txtDutyCycle";
-            this.txtDutyCycle.Size = new System.Drawing.Size(211, 17);
-            this.txtDutyCycle.TabIndex = 140;
-            this.txtDutyCycle.Text = "0";
-            this.txtDutyCycle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtDutyCycle.TextChanged += new System.EventHandler(this.txtSignFre_TextChanged);
-            this.txtDutyCycle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInputUInt_KeyPress);
-            // 
-            // txtModuDepth
-            // 
-            this.txtModuDepth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.txtModuDepth.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtModuDepth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.txtModuDepth.ForeColor = System.Drawing.Color.White;
-            this.txtModuDepth.Location = new System.Drawing.Point(568, 380);
-            this.txtModuDepth.Name = "txtModuDepth";
-            this.txtModuDepth.Size = new System.Drawing.Size(211, 17);
-            this.txtModuDepth.TabIndex = 141;
-            this.txtModuDepth.Text = "0";
-            this.txtModuDepth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtModuDepth.TextChanged += new System.EventHandler(this.txtSignFre_TextChanged);
-            this.txtModuDepth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInputUFloat_KeyPress);
+            this.tboxFrequency.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.tboxFrequency.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tboxFrequency.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxFrequency.ForeColor = System.Drawing.Color.White;
+            this.tboxFrequency.Location = new System.Drawing.Point(541, 321);
+            this.tboxFrequency.Name = "tboxFrequency";
+            this.tboxFrequency.Size = new System.Drawing.Size(211, 22);
+            this.tboxFrequency.TabIndex = 140;
+            this.tboxFrequency.Text = "0";
+            this.tboxFrequency.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tboxFrequency.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxPositiveNum_KeyPress);
             // 
             // lalAeroUpdateUnit
             // 
@@ -184,87 +156,92 @@
             this.lalAeroUpdateUnit.BackColor = System.Drawing.Color.Transparent;
             this.lalAeroUpdateUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
             this.lalAeroUpdateUnit.ForeColor = System.Drawing.Color.White;
-            this.lalAeroUpdateUnit.Location = new System.Drawing.Point(790, 295);
+            this.lalAeroUpdateUnit.Location = new System.Drawing.Point(763, 287);
             this.lalAeroUpdateUnit.Name = "lalAeroUpdateUnit";
             this.lalAeroUpdateUnit.Size = new System.Drawing.Size(22, 18);
             this.lalAeroUpdateUnit.TabIndex = 142;
             this.lalAeroUpdateUnit.Text = "%";
             // 
-            // label1
+            // cboxDataSource
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(790, 335);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(22, 18);
-            this.label1.TabIndex = 143;
-            this.label1.Text = "%";
+            this.cboxDataSource.ArrowColor = System.Drawing.Color.White;
+            this.cboxDataSource.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxDataSource.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxDataSource.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxDataSource.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboxDataSource.DropBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxDataSource.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxDataSource.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboxDataSource.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxDataSource.ForeColor = System.Drawing.Color.White;
+            this.cboxDataSource.FormattingEnabled = true;
+            this.cboxDataSource.Items.AddRange(new object[] {
+            "内部PN9",
+            "内部PN11",
+            "内部PN15",
+            "内部PN16",
+            "内部PN20",
+            "内部PN21",
+            "内部PN23",
+            "外部串行",
+            "内部并行数据",
+            "外部并行数据"});
+            this.cboxDataSource.Location = new System.Drawing.Point(541, 207);
+            this.cboxDataSource.Name = "cboxDataSource";
+            this.cboxDataSource.Size = new System.Drawing.Size(253, 22);
+            this.cboxDataSource.TabIndex = 144;
+            this.cboxDataSource.WaterColor = System.Drawing.Color.Transparent;
+            this.cboxDataSource.WaterText = "";
+            this.cboxDataSource.SelectedIndexChanged += new System.EventHandler(this.cboxDataSource_SelectedIndexChanged);
             // 
-            // cboFreUnit
+            // cboxSymbolNum
             // 
-            this.cboFreUnit.ArrowColor = System.Drawing.Color.White;
-            this.cboFreUnit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.cboFreUnit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.cboFreUnit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.cboFreUnit.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboFreUnit.DropBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.cboFreUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboFreUnit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cboFreUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboFreUnit.ForeColor = System.Drawing.Color.White;
-            this.cboFreUnit.FormattingEnabled = true;
-            this.cboFreUnit.Items.AddRange(new object[] {
-            "MHz",
-            "kHz",
-            "Hz"});
-            this.cboFreUnit.Location = new System.Drawing.Point(756, 208);
-            this.cboFreUnit.Name = "cboFreUnit";
-            this.cboFreUnit.Size = new System.Drawing.Size(65, 22);
-            this.cboFreUnit.TabIndex = 144;
-            this.cboFreUnit.WaterColor = System.Drawing.Color.Transparent;
-            this.cboFreUnit.WaterText = "";
+            this.cboxSymbolNum.ArrowColor = System.Drawing.Color.White;
+            this.cboxSymbolNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxSymbolNum.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxSymbolNum.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxSymbolNum.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboxSymbolNum.DropBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxSymbolNum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxSymbolNum.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboxSymbolNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxSymbolNum.ForeColor = System.Drawing.Color.White;
+            this.cboxSymbolNum.FormattingEnabled = true;
+            this.cboxSymbolNum.Items.AddRange(new object[] {
+            "0 个码",
+            "1 个码",
+            "2 个码",
+            "3 个码",
+            "4 个码",
+            "5 个码",
+            "6 个码",
+            "7 个码",
+            "8 个码",
+            "9 个码",
+            "10 个码"});
+            this.cboxSymbolNum.Location = new System.Drawing.Point(541, 245);
+            this.cboxSymbolNum.Name = "cboxSymbolNum";
+            this.cboxSymbolNum.Size = new System.Drawing.Size(253, 22);
+            this.cboxSymbolNum.TabIndex = 145;
+            this.cboxSymbolNum.WaterColor = System.Drawing.Color.Transparent;
+            this.cboxSymbolNum.WaterText = "";
+            this.cboxSymbolNum.SelectedIndexChanged += new System.EventHandler(this.cboxSymbolNum_SelectedIndexChanged);
             // 
-            // cboxRateUnit
+            // cboxModuType
             // 
-            this.cboxRateUnit.ArrowColor = System.Drawing.Color.White;
-            this.cboxRateUnit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.cboxRateUnit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.cboxRateUnit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.cboxRateUnit.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboxRateUnit.DropBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.cboxRateUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxRateUnit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cboxRateUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxRateUnit.ForeColor = System.Drawing.Color.White;
-            this.cboxRateUnit.FormattingEnabled = true;
-            this.cboxRateUnit.Items.AddRange(new object[] {
-            "MBaud",
-            "kBaud",
-            "Baud"});
-            this.cboxRateUnit.Location = new System.Drawing.Point(756, 251);
-            this.cboxRateUnit.Name = "cboxRateUnit";
-            this.cboxRateUnit.Size = new System.Drawing.Size(65, 22);
-            this.cboxRateUnit.TabIndex = 145;
-            this.cboxRateUnit.WaterColor = System.Drawing.Color.Transparent;
-            this.cboxRateUnit.WaterText = "";
-            // 
-            // cboModuType
-            // 
-            this.cboModuType.ArrowColor = System.Drawing.Color.White;
-            this.cboModuType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.cboModuType.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.cboModuType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.cboModuType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboModuType.DropBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
-            this.cboModuType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboModuType.Enabled = false;
-            this.cboModuType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cboModuType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.cboModuType.ForeColor = System.Drawing.Color.White;
-            this.cboModuType.FormattingEnabled = true;
-            this.cboModuType.Items.AddRange(new object[] {
+            this.cboxModuType.ArrowColor = System.Drawing.Color.White;
+            this.cboxModuType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxModuType.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxModuType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxModuType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboxModuType.DropBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxModuType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxModuType.Enabled = false;
+            this.cboxModuType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboxModuType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
+            this.cboxModuType.ForeColor = System.Drawing.Color.White;
+            this.cboxModuType.FormattingEnabled = true;
+            this.cboxModuType.Items.AddRange(new object[] {
             "BPSK",
             "QPSK",
             "8PSK",
@@ -276,13 +253,13 @@
             "64QAM",
             "128QAM",
             "256QAM"});
-            this.cboModuType.Location = new System.Drawing.Point(568, 167);
-            this.cboModuType.Name = "cboModuType";
-            this.cboModuType.Size = new System.Drawing.Size(253, 25);
-            this.cboModuType.TabIndex = 146;
-            this.cboModuType.WaterColor = System.Drawing.Color.Transparent;
-            this.cboModuType.WaterText = "";
-            this.cboModuType.SelectedIndexChanged += new System.EventHandler(this.cboModuType_SelectedIndexChanged);
+            this.cboxModuType.Location = new System.Drawing.Point(541, 166);
+            this.cboxModuType.Name = "cboxModuType";
+            this.cboxModuType.Size = new System.Drawing.Size(253, 25);
+            this.cboxModuType.TabIndex = 146;
+            this.cboxModuType.WaterColor = System.Drawing.Color.Transparent;
+            this.cboxModuType.WaterText = "";
+            this.cboxModuType.SelectedIndexChanged += new System.EventHandler(this.cboModuType_SelectedIndexChanged);
             // 
             // errorShow
             // 
@@ -307,7 +284,7 @@
             this.btnCancel.InnerBorderColor = System.Drawing.Color.Transparent;
             this.btnCancel.IsDrawBorder = false;
             this.btnCancel.IsDrawGlass = false;
-            this.btnCancel.Location = new System.Drawing.Point(812, 64);
+            this.btnCancel.Location = new System.Drawing.Point(785, 64);
             this.btnCancel.MouseBack = null;
             this.btnCancel.MouseBaseColor = System.Drawing.Color.Transparent;
             this.btnCancel.Name = "btnCancel";
@@ -335,7 +312,7 @@
             this.btnDetermine.InnerBorderColor = System.Drawing.Color.Transparent;
             this.btnDetermine.IsDrawBorder = false;
             this.btnDetermine.IsDrawGlass = false;
-            this.btnDetermine.Location = new System.Drawing.Point(716, 64);
+            this.btnDetermine.Location = new System.Drawing.Point(689, 64);
             this.btnDetermine.MouseBack = null;
             this.btnDetermine.MouseBaseColor = System.Drawing.Color.Transparent;
             this.btnDetermine.Name = "btnDetermine";
@@ -345,11 +322,144 @@
             this.btnDetermine.Text = "确定";
             this.btnDetermine.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnDetermine.UseVisualStyleBackColor = false;
+            this.btnDetermine.Click += new System.EventHandler(this.btnDetermine_Click);
             // 
             // bgwDmaTransfer
             // 
             this.bgwDmaTransfer.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwDmaTransfer_DoWork);
             this.bgwDmaTransfer.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwDmaTransfer_RunWorkerCompleted);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(450, 205);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 21);
+            this.label2.TabIndex = 149;
+            this.label2.Text = "数据源";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Location = new System.Drawing.Point(450, 244);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 21);
+            this.label3.TabIndex = 150;
+            this.label3.Text = "码元数量";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(450, 283);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 21);
+            this.label4.TabIndex = 151;
+            this.label4.Text = "占空比";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(450, 322);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 21);
+            this.label5.TabIndex = 152;
+            this.label5.Text = "频率";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Location = new System.Drawing.Point(450, 127);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 21);
+            this.label6.TabIndex = 153;
+            this.label6.Text = "信号类型";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label7.Location = new System.Drawing.Point(450, 166);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(74, 21);
+            this.label7.TabIndex = 154;
+            this.label7.Text = "调制类型";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label8.Location = new System.Drawing.Point(450, 361);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(74, 21);
+            this.label8.TabIndex = 155;
+            this.label8.Text = "码元速率";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label9.Location = new System.Drawing.Point(450, 400);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 21);
+            this.label9.TabIndex = 156;
+            this.label9.Text = "滤波器类型";
+            // 
+            // cboxFreUnit
+            // 
+            this.cboxFreUnit.ArrowColor = System.Drawing.Color.White;
+            this.cboxFreUnit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxFreUnit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxFreUnit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxFreUnit.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboxFreUnit.DropBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
+            this.cboxFreUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxFreUnit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboxFreUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxFreUnit.ForeColor = System.Drawing.Color.White;
+            this.cboxFreUnit.FormattingEnabled = true;
+            this.cboxFreUnit.Items.AddRange(new object[] {
+            "Hz",
+            "kHz",
+            "MHz"});
+            this.cboxFreUnit.Location = new System.Drawing.Point(739, 321);
+            this.cboxFreUnit.Name = "cboxFreUnit";
+            this.cboxFreUnit.Size = new System.Drawing.Size(55, 22);
+            this.cboxFreUnit.TabIndex = 157;
+            this.cboxFreUnit.WaterColor = System.Drawing.Color.Transparent;
+            this.cboxFreUnit.WaterText = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(753, 361);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 18);
+            this.label1.TabIndex = 158;
+            this.label1.Text = "Baud";
             // 
             // ArbitraryWave
             // 
@@ -357,20 +467,27 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1280, 513);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cboxFreUnit);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDetermine);
-            this.Controls.Add(this.cboModuType);
-            this.Controls.Add(this.cboxRateUnit);
-            this.Controls.Add(this.cboFreUnit);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cboxModuType);
+            this.Controls.Add(this.cboxSymbolNum);
+            this.Controls.Add(this.cboxDataSource);
             this.Controls.Add(this.lalAeroUpdateUnit);
-            this.Controls.Add(this.txtModuDepth);
-            this.Controls.Add(this.txtDutyCycle);
-            this.Controls.Add(this.txtPulseWidth);
-            this.Controls.Add(this.txtSymbolRate);
-            this.Controls.Add(this.txtSignFre);
-            this.Controls.Add(this.cboxShapingFilter);
-            this.Controls.Add(this.cboSignalType);
+            this.Controls.Add(this.tboxFrequency);
+            this.Controls.Add(this.tboxDutyCycle);
+            this.Controls.Add(this.tboxSymbolRate);
+            this.Controls.Add(this.cboxFilterType);
+            this.Controls.Add(this.cboxSignalType);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ArbitraryWave";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
@@ -384,22 +501,29 @@
 
         #endregion
 
-        private CCWin.SkinControl.SkinComboBox cboSignalType;
-        private CCWin.SkinControl.SkinComboBox cboxShapingFilter;
-        private System.Windows.Forms.TextBox txtSignFre;
-        private System.Windows.Forms.TextBox txtSymbolRate;
-        private System.Windows.Forms.TextBox txtPulseWidth;
-        private System.Windows.Forms.TextBox txtDutyCycle;
-        private System.Windows.Forms.TextBox txtModuDepth;
+        private CCWin.SkinControl.SkinComboBox cboxSignalType;
+        private CCWin.SkinControl.SkinComboBox cboxFilterType;
+        private System.Windows.Forms.TextBox tboxSymbolRate;
+        private System.Windows.Forms.TextBox tboxDutyCycle;
+        private System.Windows.Forms.TextBox tboxFrequency;
         private System.Windows.Forms.Label lalAeroUpdateUnit;
-        private System.Windows.Forms.Label label1;
-        private CCWin.SkinControl.SkinComboBox cboFreUnit;
-        private CCWin.SkinControl.SkinComboBox cboxRateUnit;
-        private CCWin.SkinControl.SkinComboBox cboModuType;
+        private CCWin.SkinControl.SkinComboBox cboxDataSource;
+        private CCWin.SkinControl.SkinComboBox cboxSymbolNum;
+        private CCWin.SkinControl.SkinComboBox cboxModuType;
         private System.Windows.Forms.ErrorProvider errorShow;
         private CCWin.SkinControl.SkinButton btnCancel;
         private CCWin.SkinControl.SkinButton btnDetermine;
         private System.ComponentModel.BackgroundWorker bgwDmaTransfer;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private CCWin.SkinControl.SkinComboBox cboxFreUnit;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label1;
 
     }
 }
