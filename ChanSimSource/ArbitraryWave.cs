@@ -81,6 +81,8 @@ namespace ChanSimSource
                 cboxModuType.Enabled = false;
                 cboxDataSource.Enabled = false;
                 cboxSymbolNum.Enabled = false;
+                tboxFrequency.Enabled = true;
+                cboxFreUnit.Enabled = true;
                 tboxDutyCycle.Enabled = false;
                 tboxSymbolRate.Enabled = false;
                 cboxFilterType.Enabled = false;
@@ -97,6 +99,8 @@ namespace ChanSimSource
                 cboxModuType.Enabled = false;
                 cboxDataSource.Enabled = false;
                 cboxSymbolNum.Enabled = false;
+                tboxFrequency.Enabled = true;
+                cboxFreUnit.Enabled = true;
                 tboxDutyCycle.Enabled = false;
                 tboxSymbolRate.Enabled = false;
                 cboxFilterType.Enabled = false;
@@ -112,6 +116,8 @@ namespace ChanSimSource
                 cboxModuType.Enabled = false;
                 cboxDataSource.Enabled = false;
                 cboxSymbolNum.Enabled = false;
+                tboxFrequency.Enabled = false;
+                cboxFreUnit.Enabled = false;
                 tboxDutyCycle.Enabled = true;
                 tboxSymbolRate.Enabled = false;
                 cboxFilterType.Enabled = false;
@@ -130,6 +136,8 @@ namespace ChanSimSource
                 cboxModuType.Items.AddRange(typeOfPSK);
                 cboxDataSource.Enabled = true;
                 cboxSymbolNum.Enabled = true;
+                tboxFrequency.Enabled = false;
+                cboxFreUnit.Enabled = false;
                 tboxDutyCycle.Enabled = false;
                 tboxSymbolRate.Enabled = true;
                 cboxFilterType.Enabled = true;
@@ -148,27 +156,31 @@ namespace ChanSimSource
                 cboxModuType.Items.AddRange(typeOfQAM);
                 cboxDataSource.Enabled = true;
                 cboxSymbolNum.Enabled = true;
+                tboxFrequency.Enabled = false;
+                cboxFreUnit.Enabled = false;
                 tboxDutyCycle.Enabled = false;
                 tboxSymbolRate.Enabled = true;
                 cboxFilterType.Enabled = true;
                 strSignalName = cboxModuType.Text;
-                if (!mainPage.SetPcieReg(Form1.PcieReg.SignalType, 5, out msg))
+                if (!mainPage.SetPcieReg(Form1.PcieReg.SignalType, 4, out msg))
                 {
                     MessageBox.Show(lastError, "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
-            else if (cboxSignalType.Text == "自定义")
+            else if (cboxSignalType.Text == "任意波")
 	        {
                 cboxModuType.Enabled = false;
                 cboxModuType.Enabled = false;
                 cboxDataSource.Enabled = false;
                 cboxSymbolNum.Enabled = false;
+                tboxFrequency.Enabled = false;
+                cboxFreUnit.Enabled = false;
                 tboxDutyCycle.Enabled = false;
                 tboxSymbolRate.Enabled = false;
                 cboxFilterType.Enabled = false;
                 strSignalName = cboxSignalType.Text;
-                if (!mainPage.SetPcieReg(Form1.PcieReg.SignalType, 6, out msg))
+                if (!mainPage.SetPcieReg(Form1.PcieReg.SignalType, 5, out msg))
                 {
                     MessageBox.Show(lastError, "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -326,8 +338,9 @@ namespace ChanSimSource
                     return;
                 }
                 fre = fre * (decimal)Math.Pow(1000, (double)cboxFreUnit.SelectedIndex);
-                fre = fre / 200000000 * (decimal)Math.Pow(2, 32);
-                data = (UInt32)Math.Floor(fre);
+                decimal tempFre;
+                tempFre= fre / 200000000 * (decimal)Math.Pow(2, 32);
+                data = (UInt32)Math.Floor(tempFre);
                 if (!mainPage.SetPcieReg(Form1.PcieReg.Frequency, data, out errorMsg))
                 {
                     MessageBox.Show(errorMsg, "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -366,6 +379,7 @@ namespace ChanSimSource
                     return;
                 }
             }
+            Close();
         }
 
         #endregion

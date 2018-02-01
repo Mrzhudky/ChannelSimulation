@@ -69,6 +69,7 @@
             this.cboxSignalType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
             this.cboxSignalType.ForeColor = System.Drawing.Color.White;
             this.cboxSignalType.FormattingEnabled = true;
+            this.cboxSignalType.ItemHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
             this.cboxSignalType.Items.AddRange(new object[] {
             "单音",
             "双音",
@@ -176,16 +177,14 @@
             this.cboxDataSource.ForeColor = System.Drawing.Color.White;
             this.cboxDataSource.FormattingEnabled = true;
             this.cboxDataSource.Items.AddRange(new object[] {
-            "内部PN9",
-            "内部PN11",
-            "内部PN15",
-            "内部PN16",
-            "内部PN20",
-            "内部PN21",
-            "内部PN23",
-            "外部串行",
-            "内部并行数据",
-            "外部并行数据"});
+            "PN9",
+            "PN11",
+            "PN15",
+            "PN16",
+            "PN20",
+            "PN21",
+            "PN23",
+            "PN167"});
             this.cboxDataSource.Location = new System.Drawing.Point(541, 207);
             this.cboxDataSource.Name = "cboxDataSource";
             this.cboxDataSource.Size = new System.Drawing.Size(253, 22);
@@ -241,6 +240,7 @@
             this.cboxModuType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
             this.cboxModuType.ForeColor = System.Drawing.Color.White;
             this.cboxModuType.FormattingEnabled = true;
+            this.cboxModuType.ItemHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(65)))), ((int)(((byte)(116)))));
             this.cboxModuType.Items.AddRange(new object[] {
             "BPSK",
             "QPSK",
