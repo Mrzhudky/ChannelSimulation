@@ -145,7 +145,7 @@
             this.tboxFrequency.ForeColor = System.Drawing.Color.White;
             this.tboxFrequency.Location = new System.Drawing.Point(541, 321);
             this.tboxFrequency.Name = "tboxFrequency";
-            this.tboxFrequency.Size = new System.Drawing.Size(211, 22);
+            this.tboxFrequency.Size = new System.Drawing.Size(181, 22);
             this.tboxFrequency.TabIndex = 140;
             this.tboxFrequency.Text = "0";
             this.tboxFrequency.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -442,9 +442,9 @@
             "Hz",
             "kHz",
             "MHz"});
-            this.cboxFreUnit.Location = new System.Drawing.Point(739, 321);
+            this.cboxFreUnit.Location = new System.Drawing.Point(728, 321);
             this.cboxFreUnit.Name = "cboxFreUnit";
-            this.cboxFreUnit.Size = new System.Drawing.Size(55, 22);
+            this.cboxFreUnit.Size = new System.Drawing.Size(66, 22);
             this.cboxFreUnit.TabIndex = 157;
             this.cboxFreUnit.WaterColor = System.Drawing.Color.Transparent;
             this.cboxFreUnit.WaterText = "";

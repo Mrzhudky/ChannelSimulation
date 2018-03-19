@@ -20,19 +20,19 @@ namespace ChanSimSource
         private WaitBox waitBox = new WaitBox();
         private Form1 mainPage;
 
-        private string[] typeOfPSK = { "BPSK", "QPSK","OPSK", "8PSK", "16PSK" };
+        private string[] typeOfPSK = { "BPSK", "QPSK", "8PSK", "16PSK" };
         private string[] typeOfQAM = { "4QAM", "16QAM", "32QAM", "64QAM", "128QAM", "256QAM","512QAM" };
         //private enum ArbiWavePara{Fre,Width,DutyCycle,Depth};
         //public enum InputMod { Int, UInt, Float, UFloat };
 
         private Dictionary<string, double> refModNum = new Dictionary<string, double>() { { "BPSK", 2 }, { "QPSK", 4 }, { "OPSK", 4 },{ "8PSK", 8 }, { "16PSK", 16 }, { "32PSK", 32 },
-        {"QAM",4} ,{"16QAM",16}, { "32QAM", 32}, { "64QAM", 64 }, { "128QAM", 128 }, { "256QAM", 256 }, { "512QAM", 512 } };
+        {"4QAM",4} ,{"16QAM",16}, { "32QAM", 32}, { "64QAM", 64 }, { "128QAM", 128 }, { "256QAM", 256 }, { "512QAM", 512 } };
 
         public string strSignalName;
         private string strDefaultPath = System.AppDomain.CurrentDomain.BaseDirectory;
         public string strWaveFilePath;
         private string lastError;
-        private uint baseData = 0; //基带模式各级基础数据
+        //private uint baseData = 0; //基带模式各级基础数据
        // private uint myFlagNum = 0;
 
         #region 参数上下限
@@ -130,7 +130,7 @@ namespace ChanSimSource
 	        }
             else if (cboxSignalType.Text == "PSK调制信号") 
             {
-                baseData = 0;
+                //baseData = 0;
                 cboxModuType.Enabled = true;
                 cboxModuType.Items.Clear();
                 cboxModuType.Items.AddRange(typeOfPSK);
@@ -150,7 +150,7 @@ namespace ChanSimSource
             }
             else if (cboxSignalType.Text == "QAM调制信号") 
             {
-                baseData = 5;
+                //baseData = 5;
                 cboxModuType.Enabled = true;
                 cboxModuType.Items.Clear();
                 cboxModuType.Items.AddRange(typeOfQAM);
@@ -237,37 +237,38 @@ namespace ChanSimSource
         private void cboModuType_SelectedIndexChanged(object sender, EventArgs e)
         {
             strSignalName = cboxModuType.Text;
-            string errorMsg;
-            uint data = 0;
-            int getData = cboxModuType.SelectedIndex + (int)baseData;
+            //string errorMsg;
+            //uint data = 0;
+            //int getData = cboxModuType.SelectedIndex + (int)baseData;
 
-            if (getData < 13 && getData > -1)
-            {
-                data = (uint)getData;
-            }
-            if (!mainPage.SetPcieReg(Form1.PcieReg.ModulateType, data, out errorMsg))
-            {
-                MessageBox.Show(errorMsg, "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }            
-
-            //string filePath = strDefaultPath + "file\\"+ strSignalName + ".txt";
-
-            //StreamReader sr = new StreamReader(filePath,Encoding.Default);
-            //String line;
-            //UInt32 hexData = 0;
-            //for (int i = 0; i < refModNum[cboxModuType.Text]; i++)
+            //if (getData < 13 && getData > -1)
             //{
-            //    line = sr.ReadLine();
-            //    if(line != ""){
-            //        hexData = Convert.ToUInt32(line,16);
-            //        if (!mainPage.SetPcieReg(Form1.PcieReg.MappingData+4*i, hexData, out lastError))
-            //        {
-            //            MessageBox.Show(lastError, "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //            return;
-            //        }
-            //    }                
+            //    data = (uint)getData;
+            //}
+            //if (!mainPage.SetPcieReg(Form1.PcieReg.ModulateType, data, out errorMsg))
+            //{
+            //    MessageBox.Show(errorMsg, "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
             //}            
+
+            string filePath = strDefaultPath + "file\\" + strSignalName + ".txt";
+
+            StreamReader sr = new StreamReader(filePath, Encoding.Default);
+            String line;
+            UInt32 hexData = 0;
+            for (int i = 0; i < refModNum[cboxModuType.Text]; i++)
+            {
+                line = sr.ReadLine();
+                if (line != "")
+                {
+                    hexData = Convert.ToUInt32(line, 16);
+                    if (!mainPage.SetPcieReg(Form1.PcieReg.MappingData + 4 * i, hexData, out lastError))
+                    {
+                        MessageBox.Show(lastError, "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+            }            
         }
 
         private void cboxDataSource_SelectedIndexChanged(object sender, EventArgs e)
@@ -371,7 +372,7 @@ namespace ChanSimSource
                     MessageBox.Show("码元速率参数配置错误！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                rate = ((decimal)Math.Pow(2, 32)/200*4)*rate;
+                rate = ((decimal)Math.Pow(2, 32)/200000000*4)*rate;
                 data = (UInt32)Math.Round(rate);
                 if (!mainPage.SetPcieReg(Form1.PcieReg.DecimalInter, data, out errorMsg))
                 {

@@ -37,35 +37,7 @@ namespace ChanSimSource
         private string strDefaultPath = System.AppDomain.CurrentDomain.BaseDirectory;
         private string lastError;
         
-        public enum PcieReg
-        {
-            IsRun       = 0x100,  //1启动，0停止
-            IsAddNoise  = 0x104,  //1加噪，0不加噪
-            SNR         = 0x108,  //信噪比
-            IsAddFad    = 0x10c,  //1--加衰落，0--不加衰落
-            FadMode     = 0x110,  //1为动态，发0为静态
-            DDRReset    = 0x114,  //发1用于DDR3复位
-            FileMode    = 0x118,  //0--任意波文件 1--衰落文件
-            ArbWaveSize = 0x11c,  //发32bit文件大小
-            FadingSize  = 0x120,  //衰落文件大小
-            FirstDelay  = 0x124,  //第一条径的时延
-            SecondDelay = 0x128,  //第二条径的时延
-            ThirdDelay  = 0x12c,  //第三条径的时延
-            FourthDelay = 0x130,  //第四条径的时延
-            FifthDelay  = 0x134,  //第五条径的时延
-            SixthDelay = 0x138,   //第六条径的时延
-            PathLoss    = 0x13c,  //损耗
-            ModulateType= 0x224,  //调制信号类型
-            FilterType  = 0x228,  //滤波类型
-            FilterTimes = 0x22c,  //成型滤波器倍数:3
-            SignalType  = 0x238,  //信号类型
-            SymbolNum   = 0x23c,  //码元数量:0--10
-            DataSource  = 0x240,  //数据源
-            DecimalInter = 0x258, //小数内插倍数
-            MappingData = 0x1000,  //内部码元映射寄存器起始地址
-            Frequency   = 0x2000,  //单音、双音、脉冲的频率
-            DutyCycle   = 0x2004   //脉冲的占空比
-        }
+        
 
         public Form1()
         {
@@ -97,10 +69,7 @@ namespace ChanSimSource
             fadWin.SetPara(this, aeroChan);
             staticFading.SetPara(this, geneChan);
 
-            if (!PcieDriver.OpenPcieDevice())
-            {
-                MessageBox.Show("打开PCI-E设备失败", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            
         }
 
         #region 衰落模块
